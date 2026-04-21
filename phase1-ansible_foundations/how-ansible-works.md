@@ -33,7 +33,7 @@ Remote servers need:
 
 **That's it. Nothing else.**
 
-Compare with other tools:
+Compare with other tools::
 
 | Tool    | Architecture | Agent on servers? |
 | ------- | ------------ | ----------------- |
