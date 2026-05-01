@@ -21,11 +21,12 @@ vi ansible.cfg
 
 Add this content:
 
-ini
-
 ```ini
 [defaults]
-inventory         = ./hosts
+inventory         = ./hosts   ## this is enough, so that on running ansible commands, 
+# you don'thave to explicitly call inventory file 
+
+# rest all fields can be created in inventory file as well
 remote_user       = ubuntu
 private_key_file  = ~/.ssh/ansible
 host_key_checking = False
@@ -45,8 +46,6 @@ vi hosts
 ```
 
 Add your worker nodes:
-
-ini
 
 ```ini
 [servers]
@@ -92,13 +91,6 @@ ansible all -m ping
 
 ```json
 worker_node_1 | SUCCESS => {
-    "ansible_facts": {
-        "discovered_interpreter_python": "/usr/bin/python3"
-    },
-    "changed": false,
-    "ping": "pong"
-}
-worker_node_2 | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"
     },
